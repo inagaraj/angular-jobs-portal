@@ -1,0 +1,32 @@
+<li class="job-listing-individual" *ngFor = "let job of shortJobs">
+    <div class="listing-logo">
+        <img [src]="job.logoImgPath" alt="Logo">
+        <img src="" alt="">
+    </div>
+    <div class="listing-content flex-fill">
+        <div class="heading" [ngClass]="{premium: job.premium}">
+            <h4>{{job.title}}</h4>
+            <div class="share">
+                <p>Posted on {{job.postedOn}}</p>
+                <button class="img-button" title="Share"><img
+                        src="./../../../assets/images/icons/share-color.png" alt="Share"></button>
+            </div>
+        </div>
+        <ul class="details">
+            <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">{{job.experience[0]}} to {{job.experience[1]}} Yrs
+            </li>
+            <li><img src="./../../../assets/images/icons/salary-color.png" alt="Salary">{{job.salary[0]}} - {{job.salary[1]}} /Annum</li>
+            <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">{{job.location}}</li>
+        </ul>
+        <div class="tools-apply">
+            <div class="tools flex-fill">
+                <ul>
+                    <li *ngFor= "let tool of job.tools">{{tool}}</li>
+                </ul>
+            </div>
+            <div>
+                <button class="list-apply-button button" [attr.data-job-id]="job.id" >Apply</button>
+            </div>
+        </div>
+    </div>
+</li>

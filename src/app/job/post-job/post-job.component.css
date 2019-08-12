@@ -1,0 +1,193 @@
+.modal-success-title {
+  font-family: Chivo;
+  font-weight: normal;
+  font-size: 24px;
+  color: #443b6f;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.modal-success-content {
+  font-family: Chivo;
+  font-size: 14px;
+  color: #494b57;
+}
+
+.title-section {
+  background-color: #F6F6F6;
+  padding-top: 65px;
+  padding-bottom: 170px;
+}
+
+.form-section {
+  margin-top: -170px;
+  margin-bottom: 90px;
+  background-color: #fff;
+  padding: 72px 92px;
+  -moz-border-radius: 5px;
+  -webkit--radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 11px #dbdbdb;
+}
+
+/* .form-row{
+  align-items: center;
+} */
+
+:host /deep/ .ql-container {
+  height: 250px;
+}
+
+:host /deep/ .ql-picker-label, :host /deep/ .ql-picker-item, :host /deep/ .ql-editor * {
+  font-family: 'Chivo', sans-serif;
+}
+
+:host /deep/ .ql-toolbar.ql-snow {
+  border: solid thin #b1b1b1;
+  -moz-border-radius: 3px 3px 0 0;
+  -webkit--radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.input-shorter {
+  max-width: 50%;
+}
+
+.radio-custom {
+  color: #3A3A3A;
+}
+
+select {
+  min-width: 50%;
+  font-size: 12px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff url(./../../../assets/images/icons/navigation/dropdown-grey.png) center right 10px no-repeat;
+  text-indent: 1px;
+  padding: 5px 14px;
+  border: #B1B1B1 solid thin;
+  -moz-border-radius: 3px;
+  -webkit--radius: 3px;
+  border-radius: 3px;
+  padding-right: 30px;
+}
+
+.mat-slider-horizontal {
+  min-width: 100%;
+}
+
+.field-title span {
+  color: #b1b1b1;
+}
+
+.example-chip-list {
+  width: 100%;
+  background: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #EBEBEB;
+  border-radius: 3px;
+  border: #B1B1B1 solid thin;
+}
+
+.example-chip-list input {
+  border: none !important;
+}
+
+.mat-chip-list-wrapper {
+  border: 1px solid #ddd;
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: #fff;
+  color: #3A3A3A;
+  box-shadow: 0px 3px 11px #c3c3c3;
+  font-family: chivo;
+}
+
+.mat-chip.mat-standard-chip .mat-chip-remove {
+  color: #333;
+  opacity: 1;
+}
+
+.mat-chip.mat-standard-chip:focus, .mat-chip.mat-standard-chip:hover {
+  background-color: #F86A3A;
+  color: #3A3A3A;
+  box-shadow: 0px 3px 11px #c3c3c3;
+}
+
+.mat-chip.mat-standard-chip:hover>.mat-chip-remove {
+  color: #fff;
+  opacity: 1;
+}
+
+.mat-option {
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+  font-family: chivo;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline, .mat-form-field-appearance-legacy .mat-form-field-underline:focus {
+  height: 0 !important;
+}
+
+::ng-deep .complete-form .priofile-field .row input, .complete-form .priofile-field .row input:focus {
+  border: none;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding-top: 0;
+}
+
+::ng-deep .mat-form-field-underline:focus-visible, .mat-form-field-underline:active {
+  height: 0;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-ripple {
+  height: 0 !important;
+}
+
+.example-chip-list ::ng-deep .mat-form-field-flex .mat-form-field-infix {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  border: none;
+}
+
+/* Datepicker */
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0em;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0em;
+  border: none;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  display: none;
+}
+
+::ng-deep .mat-form-field {
+  width: 130px;
+}
+
+.mat-input-element {
+  margin: 0;
+  color: #443B6F;
+  font-size: 12px;
+  line-height: 1;
+  padding: 7px 14px;
+  border: #B1B1B1 solid thin;
+}
+
+::ng-deep .mat-form-field-suffix {
+  position: absolute !important;
+  right: 4px;
+  top: 3px;
+}

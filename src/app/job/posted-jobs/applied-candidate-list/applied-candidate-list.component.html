@@ -1,0 +1,161 @@
+<main>
+    <div class="container">
+        <div class="header-section d-flex align-items-center">
+            <a href="/posted-jobs">Posted Jobs</a>
+            <img src="./../../../../assets/images/icons/navigation/next-color.png" class="mx-2">
+            <a href="applied-list/1">Job Title</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-section posted-jobs">
+            <div class="col-md-12 d-flex p-0 mb-5 align-items-end">
+                <div class="col-md-6 pl-0 text-left">
+                    <div class="mb-2"><span class="job_title">Developer</span><span class="job_type">Job Type</span></div>
+                    <div class="tools-apply mb-2">
+                        <div class="tools flex-fill">
+                            <ul>
+                                <!-- <li *ngFor= "let tool of job.tools">{{tool}}</li> -->
+                                <li>Blue Prism</li>
+                                <li>UI Path</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="details">
+                        <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">3 to 5 Yrs
+                        </li>
+                        <li><img src="./../../../assets/images/icons/salary-color.png" alt="Salary">3L - 5L/ month</li>
+                        <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">Chennai</li>
+                    </ul>
+                    <div class="vacancies">
+                        <div class="col-md-4 pl-0"><span class="tot_vacancies">Total Vacancies</span> 150 </div>
+                        <div class="col-md-4 pr-0"><span class="tot_applicants">Total Applicants</span> 500 </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div></div>
+                    <div class="date_field">
+                        <div class="col-md-3 pl-0">Posted at</div>
+                        <div class="col-md-3 pr-0">20 Feb, 2019</div>
+                    </div>
+                    <div class="date_field">
+                        <div class="col-md-3 pl-0">Expiry at</div>
+                        <div class="col-md-3 pr-0">20 Feb, 2019</div>
+                    </div>
+                    <div>
+                        <a href="/viewjob-desc/1"> <button class="button primary-button">View Job description </button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-flex p-0 filter_div mb-3 justify-content-end">
+
+                <div>Filter By</div>
+                <select name="filter_by" class="filter_by_select" id="filter_by">
+                <option value="filter by" selected>Filter by</option>
+            <option value="applied">Applied</option>
+            <option value="shortlisted">Shortlisted</option>
+            <option value="rejected">Rejected</option>
+          </select>
+
+            </div>
+            <table class="posted_jobs_table">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Applied On</th>
+                        <th class="text-center">Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="job_seeker">
+                                <div class="photo">
+                                    <img src="assets/images/shared/profiles/1.png" alt="Profile Picture">
+                                </div>
+                                <div class="listing-content">
+                                    <div class="heading premium">
+                                        <h4>Tanu Reddy</h4>
+                                        <p>RPA - Developer </p>
+                                    </div>
+                                    <ul class="tools">
+                                        <!-- <li *ngFor="let tool of jobSeeker.tools">Blue Prism</li> -->
+                                        <li>Blue Prism</li>
+                                        <li>UI Path</li>
+                                    </ul>
+                                    <ul class="details">
+                                        <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">3 Yrs</li>
+                                        <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">Chennai</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td>18 Dec, 2018</td>
+                        <td class="text-center">
+                            <div class="status applied">Applied</div>
+                        </td>
+                        <td class="text-center"><a href="#" class="view-button">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="job_seeker">
+                                <div class="photo">
+                                    <img src="assets/images/shared/profiles/1.png" alt="Profile Picture">
+                                </div>
+                                <div class="listing-content">
+                                    <div class="heading ">
+                                        <h4>Tanu Reddy</h4>
+                                        <p>RPA - Developer </p>
+                                    </div>
+                                    <ul class="tools">
+                                        <!-- <li *ngFor="let tool of jobSeeker.tools">Blue Prism</li> -->
+                                        <li>Blue Prism</li>
+                                        <li>UI Path</li>
+                                    </ul>
+                                    <ul class="details">
+                                        <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">3 Yrs</li>
+                                        <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">Chennai</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td>18 Dec, 2018</td>
+                        <td class="text-center">
+                            <div class="status shortlisted">Shortlisted</div>
+                        </td>
+                        <td class="text-center"><a href="#" class="view-button">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="job_seeker">
+                                <div class="photo">
+                                    <img src="assets/images/shared/profiles/1.png" alt="Profile Picture">
+                                </div>
+                                <div class="listing-content">
+                                    <div class="heading premium">
+                                        <h4>Tanu Reddy</h4>
+                                        <p>RPA - Developer </p>
+                                    </div>
+                                    <ul class="tools">
+                                        <!-- <li *ngFor="let tool of jobSeeker.tools">Blue Prism</li> -->
+                                        <li>Blue Prism</li>
+                                        <li>UI Path</li>
+                                    </ul>
+                                    <ul class="details">
+                                        <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">3 Yrs</li>
+                                        <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">Chennai</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td>18 Dec, 2018</td>
+                        <td class="text-center">
+                            <div class="status rejected">Rejected</div>
+                        </td>
+                        <td class="text-center"><a href="#" class="view-button">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

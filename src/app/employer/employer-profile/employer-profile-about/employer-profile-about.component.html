@@ -1,0 +1,43 @@
+
+<div class="modal fade" id="profile-img-edit" tabindex="-1" role="dialog" aria-labelledby="profile pic edit"
+aria-hidden="true" #companyLogoEdit>
+<div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+  <div class="modal-content">
+
+    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <div class="modal-body">
+        <h3 class="modal-title"><span>Resize</span> Profile Image</h3>
+      <image-cropper class="mb-5" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1"
+        [resizeToWidth]="128" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+        <div class="text-center">
+            <button class="button primary-button" (click)="updateProfilePic()">Save</button>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<section class="candidate-profile-head">
+  <div class="container">
+    <div class="personal-details d-flex align-items-center">
+        <div class="profile-img">
+            <img [src]="employer.about.companyLogo" alt="">
+            <input type="file" #updatePic style="display: none" (change)="fileChangeEvent($event)" accept="image/jpeg, image/png">
+            <!-- data-toggle="modal" data-target="#profile-img-edit"> -->
+            <button (click)="updatePic.click()" class="update-profilepic">
+              <img src="./../../../../assets/images/icons/edit-white.png" alt="update profile image">
+            </button>
+          </div>
+          <div class="personal-details-content col">
+            <h4 class="name">{{employer.about.companyName}} <img class="ml-3" *ngIf="employer.about.premium" src="./../../../../assets/images/icons/premium.png" alt="premium"></h4>
+          </div>
+        </div>
+        <p class="last-updated">Last Updated on <span> {{employer.about.lastUpdated}}</span></p>
+  </div>
+</section>

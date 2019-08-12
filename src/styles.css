@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+input.ng-valid.ng-touched, select.ng-valid.ng-touched{
+  border: #59D5A9 solid thin;
+}
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+  border: #F82F2F solid thin;
+}
+
+.button:disabled{
+  opacity: .5;
+}
+
+.form-row{
+  margin-bottom: 30px;
+}
+
+.field-title {
+  font-size: 16px;
+  color: #3a3a3a;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 400;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}

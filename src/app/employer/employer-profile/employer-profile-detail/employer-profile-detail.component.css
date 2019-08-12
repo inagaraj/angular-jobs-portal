@@ -1,0 +1,27 @@
+textarea {
+  padding: 5px 14px;
+  border: #B1B1B1 solid thin;
+  width: 100%;
+  -moz-border-radius: 3px;
+    -webkit--radius: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: chivo, sans-serif
+
+}
+
+.description{
+  min-height: 230px;
+}
+
+.input-short1 {
+  max-width: 50%;
+}
+
+textarea.ng-valid.ng-touched {
+  border: #59D5A9 solid thin;
+}
+
+textarea.ng-invalid.ng-touched {
+  border: #F82F2F solid thin;
+}

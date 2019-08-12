@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="searchbox">
+      <form [formGroup]="jobSearch">
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                <img src="./../../../assets/images/icons/tools-white.png" alt="">Tools
+              </div>
+              <select [formControl]="">
+                  <option value="-1" disabled selected></option>
+                  <option  *ngFor = "let tools of toolsDropdown" id="{{tools.id}}">{{tools.tool_name}}</option>
+              </select>
+          </div>
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                  <img src="./../../../assets/images/icons/location-white.png" alt="">Location
+              </div>
+              <input [formControl]="" type="text" placeholder="Chennai">
+          </div>
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                  <img src="./../../../assets/images/icons/experience-white.png" alt="">Experience
+              </div>
+              <input type="text" placeholder="3 Years">
+          </div>
+          <button class="button primary-button">Search</button>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="h-top-fixed">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="nav-left">
+                <a class="navbar-brand"   href="#" [routerLink]="['/']">
+                    <img class="nav-color-logo" src="./../../../assets/images/logo.svg" alt="RPA Jobs Logo">
+                    <img class="nav-white-logo" src="./../../../assets/images/logo-white.svg" alt="RPA Jobs Logo">
+                </a>
+                <select name="" id="">
+                    <option value="india">IND </option>
+                </select>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto align-items-center">
+                  <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" href="#" [routerLink]="['/']" >Home</a>
+                </li>
+                    <li class="nav-item" [routerLinkActive]="'active'">
+                        <a class="nav-link" href="#" [routerLink]="['/about']">What is RPA Jobs</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="'active'">
+                        <a class="nav-link" href="#" [routerLink]="['/find-jobs']">Find Jobs</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="'active'">
+                        <a class="nav-link" href="#" [routerLink]="['/applied-jobs']">Applied Jobs</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="'active'">
+                        <a class="nav-link" href="#" [routerLink]="['/profile']">My Profile</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="button img-button dropdown-toggle notification" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><img
+                                src="./../../../assets/images/icons/notification-white.png" alt=""></button>
+                        <div class="dropdown-menu dropdown-menu-right notif-drop" aria-labelledby="dropdownMenuButton">
+                            <ul class="notif-list">
+                                <li>
+                                    <a href="#">
+                                        <img src="./../../../assets/images/shared/companylogos/4.png" alt="">
+                                        <div class="notif-content-outer">
+                                            <p class="notif-content">IBM Technologies Private Limited shortlisted your profile.</p>
+                                            <p class="notif-time">15 min ago</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./../../../assets/images/shared/companylogos/2.png" alt="">
+                                        <div class="notif-content-outer">
+                                            <p class="notif-content">IBM Technologies Private Limited shortlisted your profile.</p>
+                                            <p class="notif-time">15 min ago</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./../../../assets/images/shared/companylogos/2.png" alt="">
+                                        <div class="notif-content-outer">
+                                            <p class="notif-content">IBM Technologies Private Limited shortlisted your profile.</p>
+                                            <p class="notif-time">15 min ago</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="notif-view-all text-center">
+                                <a href="#">View all</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="button img-button dropdown-toggle profileimage" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><img
+                                [src]="profileImageUrl" alt=""></button>
+                        <div class="dropdown-menu dropdown-menu-right settings" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">My Subscription</a>
+                            <a class="dropdown-item" href="#">Change password</a>
+                            <a class="dropdown-item" href="#">Help Centre</a>
+                            <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

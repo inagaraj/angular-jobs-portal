@@ -1,0 +1,36 @@
+<section class="speciality container">
+  <div class="row justify-content-between">
+      <div class="col-md-5">
+          <img src="./../../../assets/images/home/special.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+          <h4 class="section-heading">What makes us <br><span>Special.</span></h4>
+          <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, ducimus iure
+              laudantium magni
+              itaque odio eaque aliquam voluptatibus dicta nemo fugiat error eius natus eum eveniet libero
+              veritatis!</p>
+
+          <div class="speciality-listing" *ngFor = "let abt of aboutSpecial">
+              <div class="speciality-listing-top row">
+                  <div class="speciality-listing-individual col-md-6" *ngFor = "let abt_section of abt.top_special_section"  >
+                      <img src="./../../../assets/images/about/special-1.png" alt="">
+                      <div>
+                          <h5 class="number">{{abt_section.special_count}}+</h5>
+                          <p class="text">{{abt_section.special_title}}</p>
+                      </div>
+                  </div>
+                  
+              </div>
+              <div class="speciality-listing-bottom row">
+                  <div class="speciality-listing-individual col-md-6" *ngFor = "let abt_section of abt.bottom_special_section">
+                      <img src="./../../../assets/images/about/special-3.png" alt="">
+                      <div>
+                        <h5 class="number">{{abt_section.special_count}}+</h5>
+                        <p class="text">{{abt_section.special_title}}</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

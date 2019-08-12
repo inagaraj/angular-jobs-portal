@@ -1,0 +1,14 @@
+<div [ngSwitch]="accountType()" [ngClass]="{'no-signin': transparentHeader, 'nav-white': !transparentHeader}">
+  <app-job-seeker-header *ngSwitchCase="'jobSeekerLoggedIn'" ></app-job-seeker-header>
+  <app-employer-header *ngSwitchCase="'employerLoggedIn'" ></app-employer-header>
+  <app-no-login-header class="no-signin" *ngSwitchDefault>No Login</app-no-login-header>
+</div>
+
+
+
+
+
+<!-- <div [ngClass]="{'no-signin': transparentHeader, 'nav-white': !transparentHeader}">
+    <app-job-seeker-header></app-job-seeker-header>
+   <app-no-login-header></app-no-login-header>
+</div> -->

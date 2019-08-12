@@ -1,0 +1,96 @@
+
+    <div class="modal fade" id="education-add" tabindex="-1" role="dialog" aria-labelledby="signin / signup"
+    aria-hidden="true" #addModal>
+    <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title"><span>Education</span></h3>
+                <div class="education-add-form">
+
+
+                    <form action="" [formGroup]="addEducation" id="education-form">
+                        <select formControlName="qualification" class="edu-type" (change)='eduChange($event)'>
+                            <option value="null" disabled>Please select a qualification</option>
+                            <option *ngFor="let option of qualificationOptions" [value]="option[0]">{{option[1]}}</option>
+                        </select>
+                        <div class="row">
+                            <div class="col-md-5 form-label">Education Status<sup>*</sup></div>
+                            <div class="col-md-7">
+                                <label class="radio-custom">
+                                    <input type="radio" value="pursuing" formControlName="educationStatus"><span></span><i>Pursuing</i>
+                                </label>
+                                <label class="radio-custom">
+                                    <input type="radio" value="completed" formControlName="educationStatus"><span></span><i>Completed</i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row" [ngClass]="{'hide' : board()}">
+                            <div class="col-md-5 form-label">Start Year<sup>*</sup></div>
+                            <div class="col-md-7">
+                                <select class="edu-year"  formControlName="startYear" (change)="updateValid()">
+                                    <option value="null" disabled>Select a year</option>
+                                    <option *ngFor="let year of setStartDate()" [value]="year">{{year}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 form-label">Year of Completion<sup>*</sup></div>
+                            <div class="col-md-7">
+                                <select class="edu-year" formControlName="endYear">
+                                    <option value="null" disabled>Select a year</option>
+                                    <option *ngFor="let year of setCompletion()" [value]="year">{{year}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" [ngClass]="{'hide' : !board()}">
+                            <div class="col-md-5 form-label">Board<sup>*</sup></div>
+                            <div class="col-md-7">
+                                <select class="edu-year" formControlName="board">
+                                    <option value="null" disabled>Select a Board</option>
+                                    <option value="state">State</option>
+                                    <option value="CBSC">CBSC</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row"  [ngClass]="{'hide' : ifSecondary()}">
+                            <div class="col-md-5 form-label">{{stream()}}<sup>*</sup></div>
+                            <div class="col-md-7">
+                                <input type="text" formControlName="stream">
+                            </div>
+                        </div>
+
+                        <div class="row" [ngClass]="{'hide' : ifPhd()}">
+                            <div class="col-md-5 form-label">Performance Scale<sup>*</sup></div>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <select class="edu-year" formControlName="performanceScale">
+                                            <option value="percentage">Percentage</option>
+                                            <option value="grade points">Grade points</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" formControlName="totalMarks" placeholder="Score">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5 form-label">Institution Name<sup>*</sup></div>
+                            <div class="col-md-7"><input type="text" formControlName="instituteName"></div>
+                        </div>
+
+                        <div class="text-center save-button-div">
+                          <button type="button" *ngIf="saveModal" class="button primary-button" (click)="saveEducation()" [disabled]="!addEducation.valid" #saveButton>Save</button>
+                          <button type="button" *ngIf="!saveModal" class="button primary-button" (click)="editEducation(updateModalId)" [disabled]="addEducation.pristine || !addEducation.valid">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

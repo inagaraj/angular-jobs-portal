@@ -1,0 +1,45 @@
+<app-modal-login></app-modal-login>
+<app-modal-signup></app-modal-signup>
+<app-forgot-password></app-forgot-password>
+<app-reset-password></app-reset-password>
+<app-change-password></app-change-password>
+<app-premium></app-premium>
+<app-standard></app-standard>
+
+<div class="h-top-fixed">
+  <nav class="navbar navbar-expand-lg">
+      <div class="container">
+          <div class="nav-left">
+              <a class="navbar-brand" href="#" [routerLink]="['/']">
+                  <img class="nav-color-logo" src="./../../../assets/images/logo.svg" alt="RPA Jobs Logo">
+                  <img class="nav-white-logo" src="./../../../assets/images/logo-white.svg" alt="RPA Jobs Logo">
+              </a>
+              <select name="" id="">
+                  <option value="india">IND </option>
+              </select>
+          </div>
+
+          <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto align-items-center">
+                  <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                      <a class="nav-link" href="#" [routerLink]="['/']" >Home</a>
+                  </li>
+                  <li class="nav-item" [routerLinkActive]="'active'">
+                      <a class="nav-link" href="#" [routerLink]="['/about']">What is RPA Jobs</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Find Jobs</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Find Resumes</a>
+                  </li>
+                  <li class="nav-item">
+                      <button class="button primary-button" data-toggle="modal" data-target="#login">Login</button>
+                      <!-- <button class="button primary-button" data-toggle="modal" data-target="#otp">otp</button>
+                      <button class="button primary-button" data-toggle="modal" data-target="#signup-success">success</button> -->
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div>

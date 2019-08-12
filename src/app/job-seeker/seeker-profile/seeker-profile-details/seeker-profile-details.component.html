@@ -1,0 +1,364 @@
+<div>
+  <form [formGroup]="profileForm">
+    <!-- Education -->
+    <div class="profile-section" formGroupName="workExperience">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/work-color.png" alt=""> Work Experience
+      </h4>
+
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5 field-title">Key Features Work Experience</div>
+          <div class="col-md-7 check-input-container">
+            <label class="check-input" *ngFor="let control of keyFeaturesArray.controls; let i = index">
+              <input type="checkbox" [formControl]="control" (change)="selectedKeyFeatures()">
+              <span>{{keyFeaturesExperienceOptions[i]}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Total Experience</div>
+          <div class="col-md-7">
+            <select formControlName="totalExperience">
+              <option value="null">Select Exprience</option>
+              <option *ngFor="let item of experienceOptions" value={{item}}>{{item}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Relevant Experience</div>
+          <div class="col-md-7">
+            <select formControlName="relavantExperience">
+              <option value="null" disabled>Select Exprience</option>
+              <option *ngFor="let item of experienceOptions" value={{item}}>{{item}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Stability</div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-12">
+                <input type="number" formControlName="stabilityYears" class="stability-years"><span
+                  class="field-text">Years
+                  &nbsp; &nbsp; &nbsp;</span> &times; &nbsp; &nbsp; &nbsp;
+                <input type="number" formControlName="stabilityNumber" class="stability-years"><span
+                  class="field-text">No of Companies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Total Number of Automation Projects Completed</div>
+          <div class="col-md-7">
+            <input type="text" class="input-short" formControlName="noOfProjectCompleted">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">ERP Automated</div>
+          <div class="col-md-7 check-input-container">
+            <label class="check-input" *ngFor="let control of erpAutomatedArray.controls; let i = index">
+              <input type="checkbox" [formControl]="control" (change)="selectedErpAutomated()">
+              <span>{{erpAutomatedOptions[i]}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Process/ Function</div>
+          <div class="col-md-7 check-input-container">
+            <label class="check-input" *ngFor="let control of processArray.controls; let i = index">
+              <input type="checkbox" [formControl]="control" (change)="selectedprocess()">
+              <span>{{processOptions[i]}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Domain</div>
+          <div class="col-md-7 check-input-container">
+            <label class="check-input" *ngFor="let control of doaminArray.controls; let i = index">
+              <input type="checkbox" [formControl]="control" (change)="selectedDomains()">
+              <span>{{domainOptions[i]}}</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Skills/Tools -->
+    <div class="pofile-section" formGroupName="skills">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/skills-color.png" alt=""> Skill/ Tool</h4>
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5">Job Title</div>
+          <div class="col-md-7">
+            <select name="experience" id="" formControlName="jobTitle">
+              <option value="null">Choose a job title</option>
+              <option *ngFor="let item of jobTitleOptions" value="{{item}}">{{item}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row radio-row">
+          <div class="col-md-5">Primary RPA Skill</div>
+          <div class="col-md-7">
+            <label class="radio-custom" *ngFor="let item of rpaSkillOPtions">
+              <input type="radio" formControlName="primaryRpaSkill" value="{{item}}"><span></span><i>{{item}}</i>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">Versions Worked</div>
+          <div class="col-md-7">
+            <input type="text" class="input-short" formControlName="primaryWorkVersion">
+          </div>
+        </div>
+
+        <div class="row radio-row">
+          <div class="col-md-5">Secondary RPA Skill</div>
+          <div class="col-md-7">
+            <label class="radio-custom" *ngFor="let item of rpaSkillOPtions">
+              <input type="radio" formControlName="secondaryRpaSkill" value="{{item}}"><span></span><i>{{item}}</i>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">Versions Worked</div>
+          <div class="col-md-7">
+            <input type="text" class="input-short" formControlName="secondaryWorkVersion">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">Communication</div>
+          <div class="col-md-7">
+            <mat-form-field class="example-chip-list">
+              <mat-chip-list #chipList aria-label="Communication selection">
+                <mat-chip
+                  *ngFor="let communication of communications"
+                  [selectable]="selectable"
+                  [removable]="removable"
+                  (removed)="remove(communication)">
+                  {{communication}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input
+                  placeholder=""
+                  #fruitInput
+                  [formControl]="communicationCtrl"
+                  [matAutocomplete]="auto"
+                  [matChipInputFor]="chipList"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let communication of filteredcommunications | async" [value]="communication">
+                  {{communication}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Current Position -->
+    <div class="pofile-section" formGroupName="currentPosition">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/position-color.png" alt=""> Current
+        Position</h4>
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5">Company Name</div>
+          <div class="col-md-7"><input type="text" formControlName="companyName"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Duration</div>
+          <div class="col-md-7"><input type="text" formControlName="duration" class="input-short"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Notice Period (Months)</div>
+          <div class="col-md-7"><input type="number" formControlName="noticePeriod" class="input-short"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Offer in Hand</div>
+          <div class="col-md-7"><input type="text" formControlName="offerInHand"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Present Cost to Company</div>
+          <div class="col-md-7"><input type="text" formControlName="presentCTC" class="input-short"><span
+              class="field-text">/month</span></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Expected Cost to Company</div>
+          <div class="col-md-7"><input type="text" formControlName="expectedCTC" class="input-short"><span
+              class="field-text">/month</span></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Present Location</div>
+          <div class="col-md-7"><input type="text" formControlName="presentLocation" class="input-short"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Preffered Location</div>
+          <div class="col-md-7"><input type="text" formControlName="preferredLocation" class="input-short"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- To contact -->
+    <div class="pofile-section" formGroupName="contact">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/phone-color.png" alt=""> To Contact</h4>
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5">Preferred Slots for Call</div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-4">
+                Weekdays
+              </div>
+              <div class="col-md-8 text-right">
+                <div class="timing">
+                  <span>From</span>
+                  <select (change)="updateWeekdayValid()" formControlName="preferredSlotWeekDaysStart">
+                    <option value="null" disabled>select</option>
+                    <option *ngFor="let item of timeOptions" value="{{item.value}}">{{item.time}}</option>
+                  </select>
+                  <span>To</span>
+                  <select formControlName="preferredSlotWeekDaysEnd">
+                    <option value="null" disabled>select</option>
+                    <option *ngFor="let item of timeOptions" value="{{item.value}}">{{item.time}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                Weekends
+              </div>
+              <div class="col-md-8 text-right">
+                <div class="timing">
+                  <span>From</span>
+                  <select formControlName="preferredSlotWeekEndsStart" (change)="updateWeekendValid()">
+                    <option value="null" disabled>select</option>
+                    <option *ngFor="let item of timeOptions" value="{{item.value}}">{{item.time}}</option>
+                  </select>
+                  <span>To</span>
+                  <select formControlName="preferredSlotWeekEndsEnd">
+                    <option value="null" disabled>select</option>
+                    <option *ngFor="let item of timeOptions" value="{{item.value}}">{{item.time}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="pofile-section" formGroupName="documents">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/document.png" alt=""> Documents
+      </h4>
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5">Awards/Appreciations</div>
+          <div class="col-md-7"><input type="text" formControlName="awards"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Certification</div>
+          <div class="col-md-7">
+            <div class="row m-0">
+              <input type="file" multiple #certs class="hidden-inputs" (change)="certUpload($event)"
+                formControlName="certification" accept="application/pdf, 	image/jpeg, image/png">
+              <button (click)="certs.click()" class="upload-button">upload</button>
+              <!-- <input type="file" multiple #certs (change)="certUpload($event)"> -->
+            </div>
+            <div class="row mx-0 mt-3">
+              <ul class="file-list">
+                <li *ngFor="let item of oldCertificates; let i = index" class="old-certificates"><a href="{{item[1]}}"
+                    target="_blank">{{item[0]}}</a>&nbsp;<a href="javascript:void(0)" (click)="deleteCertUploaded(i)"
+                    class="closefile">&times;</a> </li>
+                <li *ngFor="let item of newCertificates; let i = index" class="new-certificates">{{item.name}} <a
+                    href="javascript:void(0)" (click)="deleteCertUpload(i)" class="closefile">&times;</a> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Documents</div>
+          <div class="col-md-7">
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                Aadhar Card
+              </div>
+              <div class="col-md-4">
+                <input type="file" #aadhar class="hidden-inputs" (change)="aadharUpload($event)"
+                  accept="application/pdf, 	image/jpeg, image/png" formControlName="aadhar">
+                <button (click)="aadhar.click()" [disabled]="aadharDisabled()" class="upload-button">upload</button>
+              </div>
+              <div class="col-md-4">
+                <ul class="file-list">
+                  <li *ngIf="aadharOld[0]" class="old-certificates"><a href="{{aadharOld[1]}}"
+                      target="_blank">{{aadharOld[0]}}</a>&nbsp;<a href="javascript:void(0)" (click)="deleteAadharOld()"
+                      class="closefile">&times;</a> </li>
+                  <li *ngIf="aadharNew[0]" class="new-certificates">{{aadharNew[0].name}} <a href="javascript:void(0)"
+                      (click)="deleteAadharNew()" class="closefile">&times;</a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                PAN Card
+              </div>
+              <div class="col-md-4">
+                <input type="file" #panCard class="hidden-inputs" (change)="panUpload($event)"
+                  accept="application/pdf, 	image/jpeg, image/png" formControlName="pan">
+                <button (click)="panCard.click()" class="upload-button" [disabled]="panDisabled()">upload</button>
+              </div>
+              <div class="col-md-4">
+                <ul class="file-list">
+                  <li *ngIf="panOld[0]" class="old-certificates"><a href="{{panOld[1]}}"
+                      target="_blank">{{panOld[0]}}</a>&nbsp;<a href="javascript:void(0)" (click)="deletePanOld()"
+                      class="closefile">&times;</a> </li>
+                  <li *ngIf="panNew[0]" class="new-certificates">{{panNew[0].name}} <a href="javascript:void(0)"
+                      (click)="deletePanNew()" class="closefile">&times;</a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                Bonafide Certificate
+              </div>
+              <div class="col-md-4">
+                <input type="file" #bonafide class="hidden-inputs" (change)="bonafideUpload($event)"
+                  accept="application/pdf, 	image/jpeg, image/png" formControlName="bonafide">
+                <button (click)="bonafide.click()" class="upload-button"
+                  [disabled]="bonafideDisabled()">upload</button>
+              </div>
+              <div class="col-md-4">
+                <ul class="file-list">
+                  <li *ngIf="bonafideOld[0]" class="old-certificates"><a href="{{panOld[1]}}"
+                      target="_blank">{{bonafideOld[0]}}</a>&nbsp;<a href="javascript:void(0)"
+                      (click)="deleteBonafideOld()" class="closefile">&times;</a> </li>
+                  <li *ngIf="bonafideNew[0]" class="new-certificates">{{bonafideNew[0].name}} <a
+                      href="javascript:void(0)" (click)="deletebonafideNew()" class="closefile">&times;</a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center save-button-div">
+      <button type="button" class="button list-apply-button" (click)="onSubmit()"
+        [disabled]="!profileForm.valid || profileForm.pristine">
+        Save & Apply
+      </button>
+    </div>
+  </form>
+
+</div>

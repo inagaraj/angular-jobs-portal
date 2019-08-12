@@ -1,0 +1,17 @@
+.candidate-profile-head .personal-details .name{
+  margin-bottom: 0;
+}
+
+.personal-details-content.col{
+  padding-left: 40px;
+}
+
+:host ::ng-deep image-cropper .cropper{
+  outline: rgba(0, 0, 0, 0.54) solid 100vw !important;
+
+}
+
+image-cropper{
+  max-height: 400px;
+  padding: 0;
+}

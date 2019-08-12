@@ -1,0 +1,140 @@
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Edit Personal Details"
+        aria-hidden="true" #signupModal>
+        <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+            <div class="modal-content">
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <h3 class="modal-title">Sign<span>up</span></h3>
+                    <p class="error-feedback text-center"></p>
+                    <form id="signup-form" class="signup-form" autocomplete="off" [formGroup]="signUp" (ngSubmit)="onSignup()">
+                        <div class="account-type text-center">
+                            <label>
+                                <input type="checkbox" name="account-type" class="switch-input" value="seeker" formControlName="accountType" (change)="accountChange()">
+                                <span class="job-seeker">As a Job seeker</span><span class="employer">As a
+                                    Employer</span>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" placeholder="First Name" formControlName="firstName">
+                                <label class="error" *ngIf="signUp.get('firstName').invalid && signUp.get('firstName').touched">Please enter a valid First Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" formControlName="lastName" placeholder="Last Name">
+                                <label class="error" *ngIf="signUp.get('lastName').invalid && signUp.get('lastName').touched">Please enter a valid Last Name</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="">
+                                    <label class="radio-custom">
+                                        <input type="radio" formControlName="sex" value="male" ><span></span>Male
+                                    </label>
+                                    <label class="radio-custom">
+                                        <input type="radio" formControlName="sex" value="female"><span></span>Female
+                                    </label>
+                                    <label class="radio-custom"><input type="radio"
+                                      formControlName="sex" value="Third gender"/><span></span>Third
+                                        Gender</label>
+                                </div>
+                                <!-- <label for="sex" class="error">Please select your gender</label> -->
+                            </div>
+                            <div class="col-md-6">
+                                <select name="maritialStatus" formControlName="maritialStatus">
+                                    <option value="null" disabled="disabled">Maritial Status</option>
+                                    <option value="single" selected>Single</option>
+                                    <option value="married">Married</option>
+                                </select>
+                                <label class="error" *ngIf="signUp.get('maritialStatus').invalid && signUp.get('maritialStatus').touched">Select a marital Status</label>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="!ifSeeker">
+                            <div class="col-md-12">
+                                <input type="text" formControlName="companyName" placeholder="Company Name">
+                                <label class="error" *ngIf="signUp.get('companyName').invalid && signUp.get('companyName').touched">Please enter your company name</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="email" formControlName="emailId" placeholder="Email id">
+                                <label class="error" *ngIf="signUp.get('emailId').invalid && signUp.get('emailId').touched">Please enter a valid email</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" formControlName="password">
+                                <label class="neutral" *ngIf="signUp.get('password').invalid && !signUp.get('password').value">Min: 8 character;  Atleast one uppercase, lowercase, number and special character</label>
+                                <label class="error" *ngIf="signUp.get('password').invalid && signUp.get('password').touched">Please enter a valid password</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <select formControlName="countryCode">
+                                    <option value="+91" selected>+91</option>
+                                    <option value="001">001</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <input type="number" formControlName="mobileNumber" placeholder="Mobile Number">
+                                <label class="error" *ngIf="signUp.get('mobileNumber').invalid && signUp.get('mobileNumber').touched">Please enter a valid mobile number</label>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="!ifSeeker">
+                            <div class="col-md-12">
+                                <select formControlName="companySize">
+                                    <option value="null" disabled="disabled">Please select your company size</option>
+                                    <option value="10 - 20">10 - 20</option>
+                                    <option value="30 - 50">30 - 50</option>
+                                    <option value="50 - 100">50 - 100</option>
+                                    <option value="100 - 150">100 - 150</option>
+                                    <option value="more than 150">more than 150</option>
+                                </select>
+                                <label class="error" *ngIf="signUp.get('companySize').invalid && signUp.get('companySize').touched">Please select your company size</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" formControlName="panNumber" [placeholder]="panNumberType()" >
+                                <label class="error" *ngIf="signUp.get('panNumber').invalid && signUp.get('panNumber').touched">Please enter a valid PAN number</label>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="button primary-button" type="submit" [disabled]="!signUp.valid">Signup</button>
+                        </div>
+
+
+                    </form>
+                    <p class="alternate-signup text-center">Already have an Account? <a href="#"
+                            class="signup-login-switch" data-modal-content="login" data-toggle="modal" data-target="#login" data-dismiss="modal">Login</a></p>
+                    <div class="sso-login">
+                        <button class="facebook-login">
+                            <img src="../../../../assets/images/icons/sso/fb.png" alt="Facebook icon">
+                            Continue with Facebook
+                        </button>
+                        <button class="google-login">
+                            <img src="./../../../assets/images/icons/sso/google.png" alt="Google icon">
+                            Continue with Google
+                        </button>
+                    </div>
+                    <p class="text-center terms-conditions">By continuing, you agree to our <a href="#"
+                            target="_blank">Terms of
+                            Use and
+                            Privacy Policy.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-otp-modal></app-otp-modal>
+    <app-signup-success-modal></app-signup-success-modal>

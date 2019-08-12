@@ -1,0 +1,64 @@
+<div class="job-spotlight">
+    <div class="search-headings">job spotlight<br><span>of Top Companies</span></div>
+    <div id="job-spotlight" class="carousel slide carousel-fade" data-ride="carousel"
+        data-intervel="400">
+        <div class="carousel-inner">
+
+            <!-- Each spotlight item is a carousel item... First item has active class -->
+            <div class="carousel-item" *ngFor="let job of jobs; let index = index" [class.active]="index == 0">
+                <div class="d-flex w-100 spotlight-item">
+                    <div class="spotlight-left">
+                        <img [src]="job.logoImgPath" alt="Logo">
+                        <ul class="details">
+                            <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">{{job.experience[0]}} - {{job.experience[1]}}
+                                Yrs</li>
+                            <li><img src="./../../../assets/images/icons/salary-color.png" alt="Salary">{{job.salary[0]}} - {{job.salary[1]}}
+                                /annum
+                            </li>
+                            <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">{{job.location}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="spotlight-right flex-fill">
+                        <div class="heading" [ngClass]="{premium: job.premium}">
+                            <h4>{{job.title}}</h4>
+                            <div class="share-button">
+                                <button class="img-button" title="share"><img
+                                        src="./../../../assets/images/icons/share-white.png" alt="Share"></button>
+                            </div>
+                        </div>
+                        <p class="skill-list">{{job.tools.join(', ')}}</p>
+                        <p class="posted-on">Posted on {{job.postedOn}}</p>
+                        <div class="post-detail">
+                            <p class="content grey" style="-webkit-box-orient: vertical;">
+                                {{job.desc}}
+                            </p>
+                        </div>
+                        <div class="apply text-center">
+                            <a class="button secondary-button" >Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Each spotlight item is a carousel item... First item has active class -->
+        </div>
+        <div class="job-showcase-carousel-controls">
+            <a href="#job-spotlight" role="button" data-slide="prev" title="Previous"><img
+                    src="./../../../assets/images/icons/navigation/prev-white.png" alt="Previous"></a>
+            <a href="#job-spotlight" role="button" data-slide="next" title="Next"><img
+                    src="./../../../assets/images/icons/navigation/next-white.png" alt="Next"></a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="top-tools">
+  <h3 class="section-heading">Top Tools</h3>
+  <div class="tools-list">
+      <a class="top-tools-chip" href="#" *ngFor="let tool of topTools">{{tool.tool_name}}</a>
+  </div>
+</div>

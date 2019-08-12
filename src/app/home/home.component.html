@@ -1,0 +1,26 @@
+<app-home-banner></app-home-banner>
+<app-job-search></app-job-search>
+
+<main>
+
+  <app-about-special></app-about-special>
+
+  <div [ngSwitch]="accountType()">
+    <app-average-salary *ngSwitchCase="'noLoggedIn'"></app-average-salary>
+    <app-profile-completeness *ngSwitchCase="'jobSeekerLoggedIn'"></app-profile-completeness>
+  </div>
+
+  <app-latest-spotlight-section></app-latest-spotlight-section>
+
+  <div [ngSwitch]="accountType()">
+      <app-average-salary *ngSwitchCase="'jobSeekerLoggedIn'"></app-average-salary>
+      <app-employer-short-banner *ngSwitchDefault></app-employer-short-banner>
+  </div>
+
+  <div *ngIf="accountType() === 'jobSeekerLoggedIn'">
+    <app-top-companies-tools></app-top-companies-tools>
+  </div>
+
+  <app-faq-section></app-faq-section>
+
+</main>

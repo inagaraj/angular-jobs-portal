@@ -1,0 +1,19 @@
+<section class="faq">
+    <div class="container">
+        <h4 class="section-heading text-center"><span>Frequently </span>Asked <span>Questions</span></h4>
+        <div class="row align-items-stretch">
+            <div class="col-md-6">
+                <div class="faq-individual"  *ngFor="let item of items" (click)="toggleClass(item)" [ngClass]="{'active': item.active}">
+                    <p class="faq-question">{{item.question}}</p>
+                    <p class="faq-answer">{{item.answer}}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="faq-individual"  *ngFor="let item of items2" (click)="toggleClass2(item)" [ngClass]="{'active': item.active}">
+                    <p class="faq-question">{{item.question}}</p>
+                    <p class="faq-answer">{{item.answer}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<!-- Top Awarded companies -->
+<section class="top-awarded">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-4">
+                <h4 class="section-heading"><span>Top Awarded</span><br> Companies</h4>
+                <p class="content">Browse the latest RPA jobs & create your UX Profile to connect with the best
+                    companies. Browse the latest RPA jobs.</p>
+                <a href="#" class="button secondary-button" [routerLink]="['/about']" >View More</a>
+            </div>
+            <div class="col-md-7">
+                <owl-carousel [options]="topCompaniesOptions" [items]="topAwardedCompanies" [carouselClasses]="['owl-theme', 'owl-carousel', 'top-companies-carousel']" #topCompanies>
+                    <div class="top-company-individual" *ngFor= "let company of topAwardedCompanies">
+                        <div class="logo"><img [src]="company.logoUrl" alt="Logo"></div>
+                        <h4>{{company.name}}</h4>
+                        <p class="content" style="-webkit-box-orient: vertical;">{{company.desc}}</p>
+                    </div>
+                </owl-carousel>
+                <div class="top-companies-carousel-controls">
+                    <div class="prev"><img src="./../../../assets/images/icons/navigation/prev-color.png" (click)="topCompaniesprev()" alt="Previous"></div>
+                    <div class="next"><img src="./../../../assets/images/icons/navigation/next-color.png" (click)="topCompaniesnext()" alt="Next"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,85 @@
+
+    <div class="modal fade" id="profile-edit" tabindex="-1" role="dialog" aria-labelledby="signin / signup"
+    aria-hidden="true" #editModal>
+    <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" (click)='resetForm()'>
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+               
+                <h3 class="modal-title">Personal <span>Details</span></h3>
+                <div id="success-message" class="error-feedback text-center success"></div>
+                <form action="" [formGroup]="editPersonalDetails" class="signup-form">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" formControlName="firstName" placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" formControlName="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="">
+                              <label class="radio-custom">
+                                <input type="radio" formControlName="sex" value="male" ><span></span>Male
+                            </label>
+                            <label class="radio-custom">
+                                <input type="radio" formControlName="sex" value="female"><span></span>Female
+                            </label>
+                            <label class="radio-custom"><input type="radio"
+                              formControlName="sex" value="Third gender"/><span></span>Third
+                                Gender</label>
+                            </div>
+                            <!-- <label for="sex" class="error">Please select your gender</label> -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="email" formControlName="emailId" placeholder="Email id">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3 pr-0">
+                                  <select formControlName="countryCode" style='background: none'>
+                                    <option value="+91" selected>+91</option>
+                                    <option value="001">001</option>
+                                </select>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9">
+                                  <input type="number" formControlName="mobileNumber" placeholder="Mobile Number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="text" formControlName="city" placeholder="city">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" formControlName="state" placeholder="state">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" formControlName="country" placeholder="Country">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" formControlName="linkedinUrl" placeholder="linkedin Profile URL">
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="button primary-button" (click)="onSubmit()" [disabled]="editPersonalDetails.pristine || !editPersonalDetails.valid">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Success" aria-hidden="true" data-backdrop="static"
+  data-keyboard="false" #succeessMessageModal>
+  <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="./../../../assets/images/icons/employer/success.png" alt="success">
+        <h3 class="modal-success-title">You have posted a job on Business Analyst</h3>
+        <div class="modal-success-content">You will be redirected shortly</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Error" aria-hidden="true" #errorMessageModal>
+  <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+    <div class="modal-content">
+      <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body text-center">
+        <img src="./../../../assets/images/icons/employer/error.png" alt="Error">
+        <h3 class="modal-success-title">Something unexpected happened</h3>
+        <div class="modal-success-content">{{errorMessage}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<main>
+  <section class="title-section">
+    <div class="container">
+      <h2 class="section-heading">Post a <span>job</span></h2>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="form-section">
+      <form [formGroup]="jobForm">
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Job Title</div>
+          <div class="col-md-8">
+            <input type="text" formControlName="jobTitle">
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Job Description</div>
+          <div class="col-md-8">
+            <quill-editor formControlName="editor" [modules]="editorConfig" placeholder="Enter Job Description">
+            </quill-editor>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-4 field-title">No of vacancies</div>
+          <div class="col-md-8">
+            <input type="number" formControlName="vacancies" class="input-shorter">
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Expiry Date</div>
+          <div class="col-md-8">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" (click)="picker.open()"  [min]="minDate" formControlName="expiryDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Job Type</div>
+          <div class="col-md-8">
+            <label class="radio-custom">
+              <input type="radio" formControlName="jobType" value="permanent"><span></span>Permanent
+            </label>
+            <label class="radio-custom">
+              <input type="radio" formControlName="jobType" value="contract"><span></span>Contract
+            </label>
+            <label class="radio-custom">
+              <input type="radio" formControlName="jobType" value="thirdPartyPayroll"><span></span>Third Party Payroll
+            </label>
+          </div>
+        </div>
+
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Location</div>
+          <div class="col-md-8">
+            <input type="text" formControlName="location" class="input-shorter">
+          </div>
+        </div>
+
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Experience</div>
+          <div class="col-md-8">
+            <select formControlName="experience">
+              <option value="null">Select Exprience</option>
+              <option *ngFor="let item of experienceOptions" value={{item}}>{{item}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Salary <span>/month</span></div>
+          <div class="col-md-8">
+
+            <input type="number" formControlName="salary" class="input-shorter">
+          </div>
+        </div>
+
+        <div class="row form-row">
+          <div class="col-md-4 field-title">Tools</div>
+          <div class="col-md-8">
+            <mat-form-field class="example-chip-list">
+              <mat-chip-list #chipList aria-label="Tools selection">
+                <mat-chip *ngFor="let tool of toolsPresent" selectable="true" removable="true" (removed)="remove(tool)">
+                  {{tool}}
+                  <mat-icon matChipRemove>cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="" #toolInput [formControl]="toolsControl" [matAutocomplete]="auto"
+                  [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  matChipInputAddOnBlur="true" (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let tool of filteredTools | async" [value]="tool">
+                  {{tool}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <input type="hidden" formControlName="tools">
+
+        <div class="text-center save-button-div">
+          <button type="button" class="button list-apply-button" (click)="onSubmit()"
+            [disabled]="!jobForm.valid || jobForm.pristine">
+            Save & Apply
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>

@@ -1,0 +1,221 @@
+main {
+    background-color: #F6F6F6;
+}
+
+.header-section {
+    padding: 60px 0;
+}
+
+.title-section {
+    background-color: #F6F6F6;
+    padding-top: 65px;
+    padding-bottom: 170px;
+}
+
+.list-apply-button {
+    margin-top: 6px;
+}
+
+.form-section {
+    margin-bottom: 90px;
+    background-color: #fff;
+    padding: 60px 75px;
+    -moz-border-radius: 5px;
+    -webkit--radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 11px #dbdbdb;
+    min-height: 300px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+th {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #443b6f;
+    padding-bottom: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tr {
+    border-bottom: solid thin #d1d1d1;
+}
+
+td {
+    font-family: 'Chivo', sans-serif;
+    font-size: 14px;
+    color: #3a3a3a;
+    padding: 20px 10px 0px 0px;
+    max-width: 260px;
+    min-width: 100px;
+}
+
+td.active {
+    color: #59D5A9;
+}
+
+td.inactive {
+    color: #B1B1B1;
+}
+
+td .view-button {
+    font-family: 'Chivo', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #443b6f;
+    padding: 3px 20px;
+    border-radius: 25px;
+    background: transparent;
+    border: 1px solid #443b6f;
+    transition: all ease .5s;
+}
+
+td .view-button:focus {
+    outline: none;
+}
+
+td .view-button:hover {
+    background: #443b6f;
+    color: #fff;
+}
+
+
+/* Pagination */
+
+pagination-controls {
+    text-align: right;
+}
+
+::ng-deep .ngx-pagination .pagination-previous a::before,
+ ::ng-deep .ngx-pagination .pagination-previous.disabled::before {
+    margin-right: 0 !important;
+}
+
+::ng-deep .ngx-pagination .pagination-next a::after,
+ ::ng-deep .ngx-pagination .pagination-next.disabled::after {
+    margin-left: 0 !important;
+}
+
+::ng-deep .ngx-pagination li {
+    margin-left: 5px;
+    margin-right: 0 !important;
+    border: solid thin #d1d1d1;
+    border-radius: 3px !important;
+    color: #443B6F;
+    font-family: 'Chivo', sans-serif;
+}
+
+::ng-deep .ngx-pagination .current {
+    background: #443B6F !important;
+}
+
+.posted-jobs .details {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.posted-jobs .details li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    margin-right: 30px;
+    font-size: 12px;
+    color: #494B57;
+}
+
+.posted-jobs .details li img {
+    margin-right: 5px;
+}
+
+.posted-jobs .tools-apply ul li {
+    margin-bottom: 0;
+    margin-right: 10px;
+    background-color: #443B6F;
+    color: #fff;
+    line-height: 1;
+    padding: 5px 7px;
+    -moz-border-radius: 3px;
+    -webkit--radius: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.posted-jobs .tools-apply ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.posted-jobs .job_title {
+    color: #494B57;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.posted-jobs .job_type {
+    color: #F86A3A;
+    font-size: 16px;
+    border-left: 2px solid;
+    padding-left: 10px;
+}
+
+.posted-jobs .date_field {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.posted-jobs .date_field div {
+    font-size: 14px;
+}
+
+.job_desc_title {
+    font-size: 18px;
+    color: #494B57;
+    margin-bottom: 20px;
+}
+
+.company_sidebar {
+    margin-bottom: 90px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 3px 11px #dbdbdb;
+    min-height: 300px;
+    padding: 20px;
+}
+
+.company_icon {
+    margin-right: 10px;
+}
+
+.company_tit {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.company_desc p {
+    font-size: 14px;
+}
+
+.company_sidebar img {
+    margin-right: 10px;
+}
+
+.contact_details {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

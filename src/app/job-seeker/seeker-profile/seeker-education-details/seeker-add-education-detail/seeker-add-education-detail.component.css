@@ -1,0 +1,12 @@
+.row.hide{
+  display: none;
+}
+
+
+.education-add-form #education-form select.ng-invalid.ng-touched{
+  border: #F82F2F solid thin;
+}
+
+.education-add-form #education-form  select.ng-valid.ng-touched{
+  border: #59D5A9 solid thin;
+}

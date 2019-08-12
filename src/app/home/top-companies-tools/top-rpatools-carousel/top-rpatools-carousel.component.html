@@ -1,0 +1,16 @@
+<section class="index-rpa-tools container text-center">
+    <h4 class="section-heading">RPA <span>Tools</span></h4>
+    <p class="content">Browse the latest RPA jobs & create your UX Profile to connect with the best companies.
+    </p>
+
+    <owl-carousel [options]="rpaToolsOptions" [items]="rpaTools" [carouselClasses]="['owl-theme', 'owl-carousel', 'rpa-tools-carousel']" #rpaToolsCarousel>
+        <div class="rpa-tool-individual" *ngFor= "let tool of rpaTools">
+            <img [src]="tool.imageUrl" alt="tool-logo">
+        </div>
+    </owl-carousel>
+
+    <div class="rpa-tools-carousel-controls">
+        <div class="prev" (click)="rpaToolsprev()" ><img src="./../../../assets/images/icons/navigation/prev-color.png" alt="Previous"></div>
+        <div class="next"  (click)="rpaToolsnext()"><img src="./../../../assets/images/icons/navigation/next-color.png" alt="Next"></div>
+    </div>
+</section>

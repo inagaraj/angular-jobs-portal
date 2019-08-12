@@ -1,0 +1,155 @@
+<div>
+  <form [formGroup]="profileForm">
+
+    <div class="profile-section" formGroupName="about">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/employer/employer-about.png" alt=""> About
+      </h4>
+
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5 field-title">Company Name</div>
+          <div class="col-md-7">
+            <input type="text" placeholder="Company Name" formControlName="companyName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Started at</div>
+          <div class="col-md-7">
+            <select formControlName="startedAt">
+              <option value="null">Select Year</option>
+              <option *ngFor="let year of companyStartedOptions()" [value]="year">{{year}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">Number of Employees</div>
+          <div class="col-md-7">
+            <select formControlName="noOfEmployees">
+              <option value="null">Please Select</option>
+              <option *ngFor="let item of companySizeOptions" value={{item}}>{{item}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Description</div>
+          <div class="col-md-7">
+            <textarea class="description" formControlName="description"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="profile-section" formGroupName="contact">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/employer/employer-contact.png" alt="">
+        Contact Information
+      </h4>
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5 field-title">Address Line 1</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="addressLine1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Address Line 2</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="addressLine2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">City</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="city" class="input-short1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">State</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="state" class="input-short1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Email Id</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="emailId" class="input-short1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Phone Number</div>
+          <div class="col-md-7">
+            <input type="number" formControlName="phoneNumber" class="input-short1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-section" formGroupName="hr">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/employer/humanresource.png" alt=""> Human
+        Resource
+      </h4>
+      <div class="priofile-field">
+        <div class="row">
+          <div class="col-md-5 field-title">City</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="hrCity" class="input-short1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">State</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="hrState" class="input-short1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Email Id</div>
+          <div class="col-md-7">
+            <input type="text" formControlName="hrEmailId" class="input-short1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 field-title">Phone Number</div>
+          <div class="col-md-7">
+            <input type="number" formControlName="hrPhoneNumber" class="input-short1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-section"  formGroupName="social">
+      <h4 class="profile-heading"><img src="./../../../../assets/images/icons/employer/socialmedia.png" alt=""> Social
+        Media Links
+      </h4>
+      <div class="priofile-field">
+          <div class="row">
+              <div class="col-md-5 field-title">Facebook</div>
+              <div class="col-md-7">
+                <input type="text" formControlName="facebook">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 field-title">Twitter</div>
+              <div class="col-md-7">
+                <input type="text" formControlName="twitter">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 field-title">LinkedIn</div>
+              <div class="col-md-7">
+                <input type="text" formControlName="linkedIn">
+              </div>
+            </div>
+      </div>
+    </div>
+
+
+
+    <div class="text-center save-button-div">
+      <button type="button" class="button list-apply-button" (click)="onSubmit()"
+        [disabled]="!profileForm.valid || profileForm.pristine">
+        Save & Apply
+      </button>
+    </div>
+
+  </form>
+</div>

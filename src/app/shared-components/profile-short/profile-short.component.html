@@ -1,0 +1,18 @@
+<li class="profile-individual" *ngFor = "let jobSeeker of jobseekers">
+  <div class="photo">
+      <img [src]="jobSeeker.profileImgUrl" alt="Profile Picture">
+  </div>
+  <div class="listing-content">
+      <div class="heading"  [ngClass]="{premium: jobSeeker.premium}">
+          <h4>{{jobSeeker.firstName}} {{jobSeeker.lastName}}</h4>
+          <p>{{jobSeeker.profile}}</p>
+      </div>
+      <ul class="tools">
+          <li *ngFor="let tool of jobSeeker.tools">{{tool}}</li>
+      </ul>
+      <ul class="details">
+          <li><img src="./../../../assets/images/icons/experience-color.png" alt="Experience">{{jobSeeker.experience}} Yrs</li>
+          <li><img src="./../../../assets/images/icons/location-color.png" alt="Location">{{jobSeeker.location}}</li>
+      </ul>
+  </div>
+</li>

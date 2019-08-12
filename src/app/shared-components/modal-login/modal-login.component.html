@@ -1,0 +1,50 @@
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="signin / signup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title">Log<span>in</span></h3>
+                <p class="server-feedback text-center" *ngIf="serverError">{{errorMessage}}</p>
+                <div class="row">
+                    <div class="col-md-7 text-center mx-auto">
+                        <form action="" id="login_modal" class="login-form" [formGroup]="loginForm"
+                            (ngSubmit)="onSubmit()">
+                            <input type="email" formControlName="emailId" placeholder="Email id">
+                            <span class="error"
+                                *ngIf="loginForm.get('emailId').invalid && loginForm.get('emailId').touched">Please
+                                enter a valid email</span>
+                            <input type="password" formControlName="password" placeholder="Password">
+                            <span class="error"
+                                *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Please
+                                enter a valid password</span>
+                            <p class="text-right mt-3"><a class="forgot-password-switch"
+                                    data-modal-content="forgot-password" data-toggle="modal"
+                                    data-target="#forgot-password" data-dismiss="modal">Forgot Password?</a></p>
+                            <button class="button primary-button" [disabled]="!loginForm.valid"
+                                type="submit">Login</button>
+                        </form>
+
+                    </div>
+                </div>
+                <p class="alternate-signup text-center">Don't Have An Account? <a href="#" class="signup-login-switch"
+                        data-modal-content="signup" data-toggle="modal" data-target="#signup"
+                        data-dismiss="modal">Signup</a></p>
+                <div class="sso-login">
+                    <button class="facebook-login">
+                        <img src="./../../../assets/images/icons/sso/fb.png" alt="Facebook icon">
+                        Continue with Facebook
+                    </button>
+                    <button class="google-login">
+                        <img src="./../../../assets/images/icons/sso/google.png" alt="Google icon">
+                        Continue with Google
+                    </button>
+                </div>
+                <p class="text-center terms-conditions">By continuing, you agree to our <a href="#"
+                        target="_blank">Terms of Use and
+                        Privacy Policy.</a></p>
+            </div>
+        </div>
+    </div>
+</div>

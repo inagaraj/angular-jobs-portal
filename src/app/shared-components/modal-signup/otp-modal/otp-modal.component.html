@@ -1,0 +1,27 @@
+<div class="modal fade" id="otp" tabindex="-1" role="dialog" aria-labelledby="signin / signup" aria-hidden="true"
+  data-backdrop="static" data-keyboard="false" #otpModal>
+  <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3 class="modal-title"><span>OTP</span> Verification</h3>
+        <div class="text-center otp-verification">
+          <p class="mx-auto">Please type your verification number sent to you at {{emailId}}</p>
+
+          <form action="" [formGroup]="otp" class="otp-form" id="otp-form">
+            <p class="error-feedback mx-auto">Error message</p>
+            <fieldset>
+              <input type="number" formControlName="digit1" (input)="autotab($event)" />
+              <input type="number" formControlName="digit2" (input)="autotab($event)" />
+              <input type="number" formControlName="digit3" (input)="autotab($event)" />
+              <input type="number"  formControlName="digit4" (input)="autotab($event)" />
+            </fieldset>
+
+            <button type="button" class="button primary-button" (click)="onSubmit()" [disabled]="!otp.valid">Verify</button>
+          </form>
+
+          <button class="otp-resend">Resend the OTP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
